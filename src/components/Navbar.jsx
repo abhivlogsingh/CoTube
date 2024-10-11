@@ -8,7 +8,7 @@ import { RiVideoAddLine } from "react-icons/ri";
 import { AiOutlineBell } from "react-icons/ai";
 
 import logo from "../../public/logo.png";
-import profile from "../../public/profile.jpg";
+import profile from "../../public/profile.png";
 import { useNavigate } from "react-router-dom";
 function Navbar() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -29,7 +29,7 @@ function Navbar() {
     <div className="flex justify-between fixed top-0 w-[100%] bg-white px-6 py-2 ">
       <div className="flex items-center space-x-4  ">
         <AiOutlineMenu className="text-xl cursor-pointer" />
-        <img src={logo} alt="" className="w-20 cursor-pointer" />
+        <img src={logo} alt="" className="w-28 cursor-pointer" />
       </div>
       <div className="flex w-[35%] items-center ">
         <div className="w-[100%] px-4 py-2 border-[1px] border-gray-400 rounded-l-full">

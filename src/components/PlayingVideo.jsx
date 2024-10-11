@@ -23,6 +23,7 @@ function PlayingVideo() {
       setVideo(res);
     });
   };
+
   const fetchRelatedVideo = () => {
     fetchData(`video/related-contents/?id=${id}`).then((res) => {
       console.log(res);
@@ -31,7 +32,7 @@ function PlayingVideo() {
   };
 
   return (
-    <div className=" flex justify-center flex-row h-[calc(100%-56px)] mt-16">
+    <div className="flex justify-center flex-row h-[calc(100%-56px)] mt-16">
       <div className="w-full max-w-[1580px] flex flex-col lg:flex-row">
         <div className="flex flex-col lg:w-[calc(100%-350px)] xl:w-[100%-400px] px-4 py-3 lg:py-6">
           <div className="h-[200px] md:h-[700px] ml-[-16px] mr-[-16px] lg:ml-0 lg:mr-0">
@@ -51,25 +52,28 @@ function PlayingVideo() {
             <div className="flex ">
               <div className="flex items-start">
                 <div className="flex h-11 w-11 rounded-full overflow-hidden">
-                  <img
-                    className="h-full w-full object-cover"
-                    src={video?.author?.avatar[0]?.url}
-                  />
+                  {video?.author?.avatar?.length > 0 && (
+                    <img
+                      className="h-full w-full object-cover"
+                      src={video?.author?.avatar[0]?.url}
+                      alt="Author Avatar"
+                    />
+                  )}
                 </div>
               </div>
               <div className="flex space-x-5">
                 <div className="flex flex-col ml-3">
                   <div className="text-md font-semibold flex items-center">
                     {video?.author?.title}
-                    {video?.author?.badges[0]?.type === "VERIFIED_CHANNEL" && (
+                    {video?.author?.badges?.[0]?.type === "VERIFIED_CHANNEL" && (
                       <BsFillCheckCircleFill className="text-white/[0.5] text-[12px] ml-1" />
                     )}
                   </div>
-                  <div className=" text-sm">
+                  <div className="text-sm">
                     {video?.author?.stats?.subscribersText}
                   </div>
                 </div>
-                <span className="mt-1 text-center bg-red-500 px-3 pt-2 rounded-full text-white cursor-pointer hover:bg-red-700 duration-200 ">
+                <span className="mt-1 text-center bg-red-500 px-3 pt-2 rounded-full text-white cursor-pointer hover:bg-red-700 duration-200">
                   Subscribe
                 </span>
               </div>
