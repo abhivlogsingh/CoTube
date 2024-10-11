@@ -23,7 +23,6 @@ import { SiStylelint } from "react-icons/si";
 import { MdPodcasts } from "react-icons/md";
 import { BiVideo } from "react-icons/bi";
 import { GiLinkedRings } from "react-icons/gi";
-
 function Sidebar() {
   const sidebarItems = [
     {
@@ -33,7 +32,7 @@ function Sidebar() {
     },
     {
       id: 2,
-      name: "shorts",
+      name: "Shorts",
       icon: <SiYoutubeshorts />,
     },
     {
@@ -153,15 +152,17 @@ function Sidebar() {
       icon: <SiYoutubekids />,
     },
   ];
-
   return (
-    <div className="px-6 w-[15%] h-[calc(100vh-6.625rem)] overflow-y-scroll overflow-x-hidden mt-16">
-      {/*HOME*/}
-      <div className="space-y-3 items-center">
+    <div className="px-6 w-[17%] h-[calc(100vh-6.625rem)] overflow-y-scroll overflow-x-hidden ">
+      {/* Home */}
+      <div className=" space-y-3 items-center">
         {sidebarItems.map((item) => {
           return (
-            <div className="flex items-center space-x-6 hover:bg-gray-300 duration-300 rounded-xl p-1">
-              <div className="text-xl cursor-pointer"> {item.icon} </div>
+            <div
+              key={item.id}
+              className="flex items-center space-x-6 hover:bg-gray-300 duration-300 rounded-xl p-1"
+            >
+              <div className="text-xl cursor-pointer">{item.icon}</div>
               <span className="cursor-pointer">{item.name}</span>
             </div>
           );
@@ -169,19 +170,19 @@ function Sidebar() {
       </div>
       <br />
       <hr />
-
-
-
-      {/* YOU */}
+      {/* You */}
       <div className="mt-4 space-y-3 items-center">
         <div className="flex items-center space-x-2">
-          <h1 className="font-semibold">You</h1>
+          <h1>You</h1>
           <FaChevronRight />
         </div>
         {sidebarItems2.map((item) => {
           return (
-            <div className="flex items-center space-x-6 hover:bg-gray-300 duration-300 rounded-xl p-1">
-              <div className="text-xl cursor-pointer"> {item.icon} </div>
+            <div
+              key={item.id}
+              className="flex items-center space-x-6 hover:bg-gray-300 duration-300 rounded-xl p-1"
+            >
+              <div className="text-xl cursor-pointer">{item.icon}</div>
               <span className="cursor-pointer">{item.name}</span>
             </div>
           );
@@ -189,19 +190,18 @@ function Sidebar() {
       </div>
       <br />
       <hr />
-
-
-
       {/* Explore */}
       <div className="mt-4 space-y-3 items-center">
-        <div className="flex items-center space-x-2">
-          <h1 className="font-semibold">Explore</h1>
-          <FaChevronRight />
+        <div className="items-center space-x-2">
+          <h1 className=" font-semibold">Explore</h1>
         </div>
         {sidebarItems3.map((item) => {
           return (
-            <div className="flex items-center space-x-6 hover:bg-gray-300 duration-300 rounded-xl p-1">
-              <div className="text-xl cursor-pointer"> {item.icon} </div>
+            <div
+              key={item.id}
+              className="flex items-center space-x-6 hover:bg-gray-300 duration-300 rounded-xl p-1"
+            >
+              <div className="text-xl cursor-pointer">{item.icon}</div>
               <span className="cursor-pointer">{item.name}</span>
             </div>
           );
@@ -209,21 +209,19 @@ function Sidebar() {
       </div>
       <br />
       <hr />
-
-
-
-      {/* More from Youtube  */}
+      {/* More section */}
       <div className="mt-4 space-y-3 items-center">
-        <div className="flex items-center space-x-2">
-          <h1 className="font-semibold">More from You Tube</h1>
-          <FaChevronRight />
+        <div className="items-center space-x-2">
+          <h1 className=" font-semibold">More From Youtube</h1>
         </div>
         {sidebarItems4.map((item) => {
           return (
-            <div className="flex items-center space-x-6 hover:bg-gray-300 duration-300 rounded-xl p-1">
+            <div
+              key={item.id}
+              className="flex items-center space-x-6 hover:bg-gray-300 duration-300 rounded-xl p-1"
+            >
               <div className="text-xl cursor-pointer text-red-500">
-                {" "}
-                {item.icon}{" "}
+                {item.icon}
               </div>
               <span className="cursor-pointer">{item.name}</span>
             </div>
@@ -231,15 +229,15 @@ function Sidebar() {
         })}
         <hr />
       </div>
-
-       <span className="text-xs text-gray-600 font-semibold">
-        About Press Copyright <br /> Contact us Creators <br />
-         Advertise Developers <br />
-        <p className="mt-3">Terms Privacy Policy & Safety </p> How YouTube works{" "}
-        <br /> Test new features
-       </span>
       <br />
-        <p className="text-xs text-gray-500 mt-3">© 2024 Kya hoga hamara</p>
+      <span className="text-xs text-gray-600 font-semibold">
+        About Press Copyright <br /> Contact us Creators <br /> Advertise
+        Developers <br />
+        <p className="mt-3">Terms Privacy Policy & Safety</p> How YouTube works{" "}
+        <br /> Test new features
+      </span>
+      <br />
+      <p className="text-xs text-gray-500 mt-3">© 2024 Learn Coding</p>
     </div>
   );
 }
